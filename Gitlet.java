@@ -342,8 +342,7 @@ public class Gitlet implements Serializable {
 				try {
 					Files.copy(from.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					// e.printStackTrace();
+					e.printStackTrace();
 				}
 			}
 			return;
@@ -356,7 +355,7 @@ public class Gitlet implements Serializable {
 			try {
 				Files.copy(from.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		} else {
 			System.err.println("File does not exist in the most recent commit, or no such branch exists.");
@@ -428,40 +427,12 @@ public class Gitlet implements Serializable {
 				try {
 					Files.copy(from.toPath(), to.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					// e.printStackTrace();
+					e.printStackTrace();
 				}
 			}
 			currentBranch.setPointNode(curNode);
 		}
 	}
-
-	/**
-	 * merge the given branch name with current branch.
-	 * 
-	 * @param name
-	 */
-	// public void merge(Branch name) {
-	//
-	// }
-
-	/**
-	 * 
-	 * @param name
-	 */
-	// public void rebase(Branch name) {
-	//
-	// }
-
-	// private static class ListFile {
-	// private Object itemName;
-	// private ListFile next;
-	//
-	// private ListFile(Object itemName, ListFile next) {
-	// this.itemName = itemName;
-	// this.next = next;
-	// }
-	// }
 
 	public static void main(String[] args) {
 		String gitFile = "gitFile.ser";
